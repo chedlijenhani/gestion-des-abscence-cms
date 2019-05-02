@@ -74,7 +74,7 @@
                     <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Africa</a>
                     <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">South America</a>
                   </div>
-
+ 
                 </li>
 
                 <li class="nav-item dropdown">

@@ -1,7 +1,7 @@
 
 
  <div class="col-md-6">
-                  <a href="<?php bloginfo('template_directory');?>/blog-single.php" class="blog-entry element-animate" data-animate-effect="fadeIn">
+                  <a href="<?php bloginfo('template_directory');?>/blog-single.php" class="blog-entry element-animate" data-animate-effect="fadeIn"> 
                     <img src="<?php bloginfo('template_directory');?>/images/img_5.jpg" alt="Image placeholder">
                     <div class="blog-content-body">
                       <div class="post-meta">

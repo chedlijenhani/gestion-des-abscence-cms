@@ -8,6 +8,7 @@
                         <span class="author mr-2"><img src="<?php bloginfo('template_directory');?>/images/person_1.jpg" alt="Colorlib"> <?php the_author(); ?></span>&bullet;
                         <span class="mr-2"><?php the_date('Y-m-d'); ?> </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
+                          
                         
                       </div>
                       <h3><?php the_title(); ?></h3>

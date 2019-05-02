@@ -38,7 +38,7 @@
                             <span class="mr-2">March 15, 2018 </span>
                           </div>
                         </div>
-                      </a>
+                      </a> 
                     </li>
                     <li>
                       <a href="">
