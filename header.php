@@ -48,7 +48,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="<?php get_bloginfo('wpurl');?>">Wordify</a></h1>
+              <h1 class="site-logo"><a href="<?php get_bloginfo('wpurl');?>">Gestion des absences </a></h1>
             </div>
           </div>
         </div>
@@ -62,31 +62,16 @@
                 <li class="nav-item">
                   <a class="nav-link active" href="<?php get_bloginfo('wpurl');?>">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Business</a>
-                </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travel</a>
+                  <a class="nav-link dropdown-toggle" href="category.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Departement</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Asia</a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Europe</a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Dubai</a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Africa</a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">South America</a>
+                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">tecnologie de l'informatique </a>
+                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Génie logiciel </a>
+                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Génie electrique </a>
+                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Génie Civil </a>
+                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Administarion des afaires</a>
                   </div>
  
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category.php" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Lifestyle</a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Food</a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Adventure</a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Travel</a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Business</a>
-                  </div>
-
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="<?php bloginfo('template_directory');?>/about.php">About</a>
