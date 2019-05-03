@@ -8,7 +8,7 @@
  
             <!-- END main-content -->
 
-            <?php get_sidebar(); ?>
+          
             <!-- END sidebar -->
 
           
