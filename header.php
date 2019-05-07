@@ -62,17 +62,6 @@
                 <li class="nav-item">
                   <a class="nav-link active" href="<?php get_bloginfo('wpurl');?>">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="category.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Departement</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">tecnologie de l'informatique </a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Génie logiciel </a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Génie electrique </a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Génie Civil </a>
-                    <a class="dropdown-item" href="<?php bloginfo('template_directory');?>/category.php">Administarion des afaires</a>
-                  </div>
- 
-                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="<?php bloginfo('template_directory');?>/about.php">About</a>
                 </li>
