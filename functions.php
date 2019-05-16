@@ -1,4 +1,5 @@
 <?php
+add_theme_support('post-thumbnails');
 function create_post_your_post(){
 register_post_type('your_post',
 array(
