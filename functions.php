@@ -1,7 +1,7 @@
 <?php
 
 add_theme_support('post-thumbnails');
-
+add_image_size('small-thumbnails',350,234,true);
 
 function custom_settings_add_menu() {
 add_menu_page( 'Custom Settings', 'Custom Settings', 'manage_options',
