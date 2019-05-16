@@ -40,28 +40,6 @@
                         </div>
                       </a> 
                     </li>
-                    <li>
-                      <a href="">
-                        <img src="<?php bloginfo('template_directory');?>/images/img_4.jpg" alt="Image placeholder" class="mr-4">
-                        <div class="text">
-                          <h4>How to Find the Video Games of Your Youth</h4>
-                          <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <img src="<?php bloginfo('template_directory');?>/images/img_12.jpg" alt="Image placeholder" class="mr-4">
-                        <div class="text">
-                          <h4>How to Find the Video Games of Your Youth</h4>
-                          <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -70,11 +48,16 @@
               <div class="sidebar-box">
                 <h3 class="heading">Categories</h3>
                 <ul class="categories">
-                  <li><a href="#">Food <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(22)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(37)</span></a></li>
-                  <li><a href="#">Business <span>(42)</span></a></li>
-                  <li><a href="#">Adventure <span>(14)</span></a></li>
+                    
+                    <?php   $cats= get_categories();
+                
+                    foreach ($cats as $cat){
+                        $cat_id=$cat->term_id;
+                        echo '<li><a href="#">'.$cat->name.'('.$cat->count.')</a> </li>';
+               
+                    }
+                ?>
+                  
                 </ul>
               </div>
               <!-- END sidebar-box -->
