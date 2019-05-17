@@ -48,11 +48,11 @@
                   <div class="mb-5">
                     <h3>Social</h3>
                     <ul class="list-unstyled footer-social">
-                      <li><a href="#"><span class="fa fa-twitter"></span> Twitter</a></li>
-                      <li><a href="#"><span class="fa fa-facebook"></span> Facebook</a></li>
-                      <li><a href="#"><span class="fa fa-instagram"></span> Instagram</a></li>
+                      <li><a href="<?php echo get_option('twitter'); ?>"><span class="fa fa-twitter"></span> Twitter</a></li>
+                      <li><a href="<?php echo get_option('facebook'); ?>"><span class="fa fa-facebook"></span> Facebook</a></li>
+                      <li><a href="<?php echo get_option('instagram'); ?>"><span class="fa fa-instagram"></span> Instagram</a></li>
                       <li><a href="#"><span class="fa fa-vimeo"></span> Vimeo</a></li>
-                      <li><a href="#"><span class="fa fa-youtube-play"></span> Youtube</a></li>
+                      <li><a href="<?php echo get_option('youtube'); ?>"><span class="fa fa-youtube-play"></span> Youtube</a></li>
                       <li><a href="#"><span class="fa fa-snapchat"></span> Snapshot</a></li>
                     </ul>
                   </div>

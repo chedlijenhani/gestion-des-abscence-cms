@@ -28,10 +28,10 @@
           <div class="container">
             <div class="row">
               <div class="col-9 social">
-                <a href="#"><span class="fa fa-twitter"></span></a>
-                <a href="#"><span class="fa fa-facebook"></span></a>
-                <a href="#"><span class="fa fa-instagram"></span></a>
-                <a href="#"><span class="fa fa-youtube-play"></span></a>
+                <a href="<?php echo get_option('twitter'); ?>"><span class="fa fa-twitter"></span></a>
+                <a href="<?php echo get_option('facebook'); ?>"><span class="fa fa-facebook"></span></a>
+                <a href="<?php echo get_option('instagram'); ?>"><span class="fa fa-instagram"></span></a>
+                <a href="<?php echo get_option('youtube'); ?>"><span class="fa fa-youtube-play"></span></a>
               </div>
               <div class="col-3 search-top">
                 <!-- <a href="#"><span class="fa fa-search"></span></a> -->
@@ -60,8 +60,12 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="<?php get_bloginfo('wpurl');?>">Home</a>
+                  <a class="nav-link active" href="<?php bloginfo('template_directory');?>/index.php">Home</a>
                 </li>
+				<li class="nav-item">
+                  <span class="nav-link active" ><?php wp_nav_menu( array( 'theme_location' => 'nav-menu' ) ); ?></span>
+                </li>
+				
                 <li class="nav-item">
                   <a class="nav-link" href="<?php bloginfo('template_directory');?>/about.php">About</a>
                 </li>
