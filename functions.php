@@ -13,6 +13,12 @@ add_action( 'admin_menu', 'custom_settings_add_menu' );
 function register_my_menu() {
 	register_nav_menu( 'nav-menu', __( 'Navigation Menu' ) );
 }
+function startwordpress_google_fonts() {
+	wp_register_style('OpenSans',
+	'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+	wp_enqueue_style( 'OpenSans');
+}
+add_action('wp_print_styles', 'startwordpress_google_fonts');
 function custom_settings_page() { ?>
 	<div class="wrap">
 		<h1>Custom Settings</h1>
@@ -97,61 +103,47 @@ function add_teacher_meta_box(){
 }
 add_action('add_meta_boxes','add_teacher_meta_box');
 
-// creat Absences meta box
-function add_nombre_absences_meta_box(){
-	add_meta_box(
-		'nombre_absences_meta_box',// $id
-		'Absences',// $title
-		'show_nombre_absences_meta_box',// $callback
-		'absences',// $screen
-		'normal',// $context
-		'high'// $priority
-	);
-}
-add_action('add_meta_boxes','add_nombre_absences_meta_box');
+
 /*
 *show teacher meta box < teacher > ..........
 */
 
 function show_teacher_meta_box(){
 	global $post;
-	$meta=get_post_meta($post->ID , 'Enseignant' , true); ?>
-	<input type="hidden" name="teacher_box_nonce" value="<?php echo wp_create_nonce(basename(__FILE__) ); ?>">
+	$meta=get_post_meta($post->ID , 'teacher' , true); ?>
+	<input type="hidden" name="your_meta_box_nonce" value="<?php echo wp_create_nonce(basename(__FILE__) ); ?>">
 
 	<p>
-		<label for="your_fields[text]">Enseignant</label>
+		<label for="teacher[text]">Enseignant</label>
 		<br>
 		<input type="text" name="teacher[text]" id="teacher[text]" class="regular-text"
 		value="<?php if (is_array($meta) && isset($meta['text'])) {	echo $meta['text']; } ?>">
 	</p>
 
+
 	<?php
-}
-/*
-*show teacher meta box < nombre d'absences >......
-*/
-
-function show_nombre_absences_meta_box(){
-	global $post;
-	$meta=get_post_meta($post->ID , 'Absences' , true); ?>
-	<input type="hidden" name="nombre_absencesr_box_nonce" value="<?php echo wp_create_nonce(basename(__FILE__) ); ?>">
-
+	/*
+	*show Absences meta box < nombre d'absences >......
+	*/
+	$meta=get_post_meta($post->ID , 'nombre_absences' , true); ?>
+	<input type="hidden" name="your_meta_box_nonce" value="<?php echo wp_create_nonce(basename(__FILE__) ); ?>">
+	
 	<p>
 		<label for="nombre_absences[text]">nombre d'absences</label>
 		<br>
 		<input type="text" name="nombre_absences[text]" id="nombre_absences[text]" class="regular-text"
 		value="<?php if (is_array($meta) && isset($meta['text'])) {	echo $meta['text']; } ?>">
 	</p>
-
 	<?php
 }
+
 
 /* save your meta box on your data base   ===> */
 
 function save_teacher_meta( $post_id ) {
 	// verify nonce
-	if ( isset($_POST['teacher_box_nonce'])
-	&& !wp_verify_nonce( $_POST['teacher_box_nonce'], basename(__FILE__) ) ) {
+	if ( isset($_POST['your_meta_box_nonce'])
+	&& !wp_verify_nonce( $_POST['your_meta_box_nonce'], basename(__FILE__) ) ) {
 		return $post_id;
 	}
 	// check autosave
@@ -175,6 +167,15 @@ function save_teacher_meta( $post_id ) {
 			update_post_meta( $post_id, 'teacher', $new );
 		} elseif ( '' === $new && $old ) {
 			delete_post_meta( $post_id, 'teacher', $old );
+		}
+	}
+	$old2 = get_post_meta( $post_id, 'nombre_absences', true );
+	if (isset($_POST['nombre_absences'])) { //Fix 3
+		$new = $_POST['nombre_absences'];
+		if ( $new && $new !== $old2 ) {
+			update_post_meta( $post_id, 'nombre_absences', $new );
+		} elseif ( '' === $new && $old ) {
+			delete_post_meta( $post_id, 'nombre_absences', $old );
 		}
 	}
 }
