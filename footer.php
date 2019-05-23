@@ -17,14 +17,9 @@
                     <ul>
                       <li>
                         <a href="">
-                          <img src="<?php bloginfo('template_directory');?>/images/img_4.jpg" alt="Image placeholder" class="mr-4">
-                          <div class="text">
-                            <h4>How to Find the Video Games of Your Youth</h4>
-                            <div class="post-meta">
-                              <span class="mr-2">March 15, 2018 </span> &bullet;
-                              <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                            </div>
-                          </div>
+                               <?php if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
+                  <?php get_template_part( 'content', get_post_format() ); ?>
+      <?php     endwhile; endif;  ?> 
                         </a>
                       </li>
                     </ul>

@@ -1,4 +1,4 @@
-       <img src="<?php  the_post_thumbnail_url();  ?>" alt="Image" class="img-fluid mb-5">
+  <img src="<?php  the_post_thumbnail_url();  ?>" alt="Image" class="img-fluid mb-5">
              <div class="post-meta">
                         <span class="author mr-2">  
                                       <?php  $user=get_the_author_meta('ID'); ?>   

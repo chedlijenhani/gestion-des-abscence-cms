@@ -10,17 +10,26 @@
               <!-- END sidebar-box -->
               <div class="sidebar-box">
                 <div class="bio text-center">
-                  <img src="<?php bloginfo('template_directory');?>/images/person_1.jpg" alt="Image Placeholder" class="img-fluid">
+                    <?php
+$user = wp_get_current_user();
+ 
+if ( $user ) :
+                  
+    ?>
+                  <img src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" alt="Image Placeholder" class="img-fluid">
+                
                   <div class="bio-body">
-                    <h2>David Craig</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                    <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                    <h2> <?php echo $user->user_nicename ?></h2>
+                      <p>  <?php echo $user->user_description  ?> </p>
+                    <p><a href="http://localhost/isetsl/wp-content/themes/gestion-des-abscence-cms/about.php" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                      <?php endif; ?>
                     <p class="social">
                     <a href="<?php echo get_option('facebook'); ?>" class="p-2"><span class="fa fa-facebook"></span></a>
                       <a href="<?php echo get_option('twitter'); ?>" class="p-2"><span class="fa fa-twitter"></span></a>
                       <a href="<?php echo get_option('instagram'); ?>" class="p-2"><span class="fa fa-instagram"></span></a>
                       <a href="<?php echo get_option('youtube'); ?>" class="p-2"><span class="fa fa-youtube-play"></span></a>
                     </p>
+                      
                   </div>
                 </div>
               </div>
@@ -30,6 +39,8 @@
                 <div class="post-entry-sidebar">
                   <ul>
                     <li>
+                        
+                        
                       <a href="">
                         <img src="<?php bloginfo('template_directory');?>/images/img_2.jpg" alt="Image placeholder" class="mr-4">
                         <div class="text">
@@ -65,18 +76,7 @@
               <div class="sidebar-box">
                 <h3 class="heading">Tags</h3>
                 <ul class="tags">
-                  <li><a href="#">Travel</a></li>
-                  <li><a href="#">Adventure</a></li>
-                  <li><a href="#">Food</a></li>
-                  <li><a href="#">Lifestyle</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Freelancing</a></li>
-                  <li><a href="#">Travel</a></li>
-                  <li><a href="#">Adventure</a></li>
-                  <li><a href="#">Food</a></li>
-                  <li><a href="#">Lifestyle</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Freelancing</a></li>
+                  <li><a href="#"><?php the_tags(); ?></a></li> 
                 </ul>
               </div>
             </div>

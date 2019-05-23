@@ -48,7 +48,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="<?php get_bloginfo('wpurl');?>">Gestion des absences </a></h1>
+              <h1 class="site-logo"><a href="http://localhost/isetsl/">Gestion des absences </a></h1>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="<?php bloginfo('template_directory');?>/index.php">Home</a>
+                  <a class="nav-link active" href="http://localhost/isetsl/">Home</a>
                 </li>
 				<li class="nav-item">
                   <span class="nav-link active" ><?php wp_nav_menu( array( 'theme_location' => 'nav-menu' ) ); ?></span>
