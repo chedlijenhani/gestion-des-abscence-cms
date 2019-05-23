@@ -5,6 +5,7 @@ function register_my_menu() {
 add_action( 'init', 'register_my_menu' );
 add_theme_support('post-thumbnails');
 add_image_size('small-thumbnails',350,234,true);
+add_image_size('footer-thumbnails',90,60,true);
 function custom_settings_add_menu() {
 			add_menu_page( 'Custom Settings', 'Custom Settings', 'manage_options',
 			'custom-settings', 'custom_settings_page', null, 99 );

@@ -38,19 +38,32 @@ if ( $user ) :
                 <h3 class="heading">Popular Posts</h3>
                 <div class="post-entry-sidebar">
                   <ul>
-                    <li>
-                        
-                        
-                      <a href="">
-                        <img src="<?php bloginfo('template_directory');?>/images/img_2.jpg" alt="Image placeholder" class="mr-4">
-                        <div class="text">
-                          <h4>How to Find the Video Games of Your Youth</h4>
-                          <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
+                       <?php 
+                          $i=0;
+                          if ( have_posts() ) : while ( have_posts() ) : the_post();  
+                          ?>        
+                  <?php if( $i<3 ) : ?>
+                           <li>
+                            <a href="<?php the_permalink(); ?>">
+                          <?php  the_post_thumbnail('footer-thumbnails');  ?> 
+                          <div class="text">
+                            <h4><?php the_title(); ?></h4>
+                            <div class="post-meta">
+                              <span class="mr-2"><?php the_date('Y-m-d'); ?> </span> &bullet;
+                              <span class="ml-2"><span class="fa fa-comments"></span> <?php echo '  '.get_comments_number(); ?></span>
+                            </div>
                           </div>
-                        </div>
-                      </a> 
-                    </li>
+                        </a> 
+                       </li>   
+                          
+                          
+                       <?php   
+                          
+                          $i ++;
+                          endif;  ?> 
+                          
+      <?php     endwhile; endif;  ?> 
+                      
                   </ul>
                 </div>
               </div>
