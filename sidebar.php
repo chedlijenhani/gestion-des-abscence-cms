@@ -88,8 +88,12 @@ if ( $user ) :
 
               <div class="sidebar-box">
                 <h3 class="heading">Tags</h3>
-                <ul class="tags">
-                  <li><a href="#"><?php the_tags(); ?></a></li> 
-                </ul>
-              </div>
+                
+                  <?php
+if(get_the_tag_list()) {
+    echo get_the_tag_list('<ul class="tags" ><li>','</li><li>','</li></ul>');
+}
+?>
+               
+            
             </div>

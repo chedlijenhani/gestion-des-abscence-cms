@@ -60,7 +60,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="http://localhost/isetsl/">Home</a>
+                  <a class="nav-link active" href="<?php bloginfo('template_directory');?>/index.php">Home</a>
                 </li>
 				<li class="nav-item">
                   <span class="nav-link active" ><?php wp_nav_menu( array( 'theme_location' => 'nav-menu' ) ); ?></span>
