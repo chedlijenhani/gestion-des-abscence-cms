@@ -15,13 +15,37 @@
                   <h3>Latest Post</h3>
                   <div class="post-entry-sidebar">
                     <ul>
-                      <li>
-                        <a href="">
-                               <?php if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
-                  <?php get_template_part( 'content', get_post_format() ); ?>
+                     
+               
+                               <?php 
+                          $i=0;
+                          if ( have_posts() ) : while ( have_posts() ) : the_post();  
+                          ?>        
+                  <?php if( $i<3 ) : ?>
+                           <li>
+                            <a href="<?php the_permalink(); ?>">
+                          <?php  the_post_thumbnail('footer-thumbnails');  ?> 
+                          <div class="text">
+                            <h4><?php the_title(); ?></h4>
+                            <div class="post-meta">
+                              <span class="mr-2"><?php the_date('Y-m-d'); ?> </span> &bullet;
+                              <span class="ml-2"><span class="fa fa-comments"></span> <?php echo '  '.get_comments_number(); ?></span>
+                            </div>
+                          </div>
+                        </a> 
+                       </li>   
+                          
+                          
+                       <?php   
+                          
+                          $i ++;
+                          endif;  ?> 
+                          
       <?php     endwhile; endif;  ?> 
-                        </a>
-                      </li>
+                      
+                
+
+                      
                     </ul>
                   </div>
                 </div>
@@ -32,11 +56,10 @@
                   <div class="mb-5">
                     <h3>Quick Links</h3>
                     <ul class="list-unstyled">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Travel</a></li>
-                      <li><a href="#">Adventure</a></li>
-                      <li><a href="#">Courses</a></li>
-                      <li><a href="#">Categories</a></li>
+                      <li><a href="<?php bloginfo('template_directory');?>/about.php">About Us</a></li>
+                      <li><a href="http://localhost/isetsl/">Home</a></li>
+                      <li><a  href="<?php bloginfo('template_directory');?>/contact.php">Contact</a></li>
+                    
                     </ul>
                   </div>
                   
