@@ -1,1 +1,1 @@
-wp-theme
+Welcome to Tech up 
